@@ -12,3 +12,5 @@ sqoop import-all-tables \
 --warehouse-dir /mysql_data/  \
 --null-string '\\N' \
 --null-non-string '\\N'
+
+啊啊啊啊啊啊啊啊啊
