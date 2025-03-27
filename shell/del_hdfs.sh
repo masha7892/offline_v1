@@ -1,6 +1,6 @@
 #!/bin/sh
 
-hdfs_dir="/mysql_data"
+hdfs_dir="/hive/mysql_data/"
 
 del(){
   file_array=($(hdfs dfs -ls $hdfs_dir | awk '{print $8}'))

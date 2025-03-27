@@ -6,9 +6,9 @@ sqoop import-all-tables \
 --connect jdbc:mysql://cdh03:3306/gmall \
 --username root \
 --password  root \
---num-mappers 8 \
+--num-mappers 1 \
 --compression-codec snappy  \
 --fields-terminated-by "," \
---warehouse-dir /mysql_data/  \
+--warehouse-dir /hive/mysql_data/ \
 --null-string '\\N' \
 --null-non-string '\\N'
