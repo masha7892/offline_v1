@@ -98,7 +98,7 @@ location "/hive/dataWarehouse/dwd/dwd_dim_order_detail";
 
 
 -- alter table dwd_dim_order_detail set tblproperties ("EXTERNAL"="false");
-show create table dwd_dim_order_detail;
+-- show create table dwd_dim_order_detail;
 -- truncate table dwd_dim_order_detail;
 -- select * from dwd_dim_order_detail;
 -- alter table dwd_dim_order_detail set tblproperties ("EXTERNAL"="true");
@@ -370,5 +370,4 @@ from (
 where dt = "2020-03-20";
 
 
-select * from dwd_dim_order_detail;
-select count(detail_id) from dwd_dim_order_detail;
+
