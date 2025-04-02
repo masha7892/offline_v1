@@ -14,6 +14,7 @@ drop table if exists ods_base_category2;
 drop table if exists ods_base_category1;
 drop table if exists ods_order_info;
 drop table if exists ods_order_detail;
+drop table if exists ods_base_province;
 show tables ;
 
 -- ods_sku_info
@@ -116,6 +117,16 @@ create external table if not exists ods_order_detail(
 row format delimited fields terminated by ","
 location "/hive/dataWarehouse/ods/ods_order_detail";
 
+create external table if not exists ods_base_province(
+    `id` bigint,
+    `name` varchar(20),
+    `region_id` varchar(20),
+    `area_code` varchar(20),
+    `iso_code` varchar(20),
+    `iso_3166_2` varchar(20)
+)
+row format delimited fields terminated by ","
+location "/hive/dataWarehouse/ods/ods_base_province";
 
 -- 导入数据
 
@@ -128,7 +139,7 @@ load data inpath "/hive/mysql_data/base_category2" overwrite into table ods_base
 load data inpath "/hive/mysql_data/base_category1" overwrite into table ods_base_category1;
 load data inpath "/hive/mysql_data/order_info" overwrite into table ods_order_info;
 load data inpath "/hive/mysql_data/order_detail" overwrite into table ods_order_detail;
-
+load data inpath "/hive/mysql_data/base_province" overwrite into table ods_base_province;
 
 -- 查询数据
 select * from ods_sku_info;
@@ -139,4 +150,4 @@ select * from ods_base_category2;
 select * from ods_base_category1;
 select * from ods_order_info;
 select * from ods_order_detail;
-
+select * from ods_base_province;
